@@ -1,5 +1,7 @@
+import { CONFIG } from "./config.js";
+
 export const Endpoints = {
-    DOMAIN: "https://u05.dwestin.com",
+    DOMAIN: CONFIG.DEV,
     users: {
         account: (id) => `${Endpoints.DOMAIN}/users/${id}`,
         profile: (id) => `${Endpoints.DOMAIN}/users/${id}/profile`,

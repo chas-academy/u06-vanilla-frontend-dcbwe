@@ -7,3 +7,4 @@ export { HttpClient, HttpHeaders, HttpBody, HttpRequest } from "./http.js";
 export { UserMapper } from "./mapper.js";
 export { Session, getBearer, getUserId } from "./session.js";
 export { Theme } from "./theme.js";
+export { CONFIG } from "./config.js";
