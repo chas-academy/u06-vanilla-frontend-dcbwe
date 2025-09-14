@@ -1,6 +1,6 @@
 ## Purpose
 
-The goal is to build a **RESTful API** that represents parts of a **registration and profile management process** PART 2. This is a lightweight frontend app in vanilla JS that intergrates with the previous u05 [include link here...]
+The goal is to build a **RESTful API** that represents parts of a **registration and profile management process** PART 2. This is a lightweight frontend app in vanilla JS that intergrates with the previous u05 [link to repo](https://github.com/dcbwe/u05_RESTfulAPI)
 
 Figma protoype of the app [click to view](https://www.figma.com/proto/rBRGaMzm8jr05s2CDWmAJf/Untitled?node-id=677-499&t=pAXjPcdDmpsNQW5m-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=677%3A499&show-proto-sidebar=1)
 
