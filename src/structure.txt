@@ -1,0 +1,37 @@
+.
+├── app
+│   ├── api.js
+│   ├── buttons.js
+│   ├── dom.js
+│   ├── endpoints.js
+│   ├── forms.js
+│   ├── http.js
+│   ├── index.js
+│   ├── mapper.js
+│   ├── session.js
+│   └── theme.js
+├── components
+│   ├── dashboard.js
+│   ├── health.js
+│   ├── landing.js
+│   ├── login.js
+│   ├── profile.js
+│   ├── settings.js
+│   ├── signup.js
+│   └── verify.js
+├── icons
+│   ├── check-cancel.svg
+│   ├── check-save.svg
+│   ├── health.svg
+│   ├── home.svg
+│   ├── logout.svg
+│   ├── moon.svg
+│   ├── pencil.svg
+│   ├── return.svg
+│   ├── settings.svg
+│   ├── sun.svg
+│   ├── user-plus.svg
+│   └── user.svg
+├── index.html
+├── main.js
+└── styles.css

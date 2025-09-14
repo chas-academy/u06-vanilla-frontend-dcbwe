@@ -1,0 +1,353 @@
+:root {
+    --header-height: 68px;
+    --footer-height: 68px;
+    --content-max-width: 640px;
+    --ease-fast: 0.2s ease;
+    --ease-press: 0.1s ease;
+    --icon-size: 1.5rem;
+}
+
+:root[data-theme="dark"] {
+    --bg: #0b0b0f;
+    --surface: #252534;
+    --muted: #383859;
+    --text: #f5f6fa;
+    --input-text: grey;
+    --accent: #5b8cff;
+    --ring: #3a5bd8;
+
+    --btn-fg: var(--text);
+    --btn-bg-hover: color-mix(in oklab, var(--text) 10%, transparent);
+}
+
+:root[data-theme="light"] {
+    --bg: #0b0b0f;
+    --surface: #9d9ddd;
+    --muted: #7272b7;
+    --text: #0a0a0a;
+    --input-text: #0a0a0a;
+    --accent: #565eff;
+    --ring: #121d43;
+
+    --btn-fg: var(--text);
+    --btn-bg-hover: color-mix(in oklab, var(--text) 12%, transparent);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+label,
+select,
+option {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 220px;
+}
+
+section {
+    place-items: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.center {
+    align-self: center;
+}
+
+input,
+option {
+    padding: 0.25rem;
+}
+
+select {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+input::placeholder {
+    font-style: italic;
+    color: color-mix(in oklab, var(--input-text) 70%, grey);
+}
+
+select:disabled {
+    background-color: var(--muted);
+    font-style: italic;
+    opacity: 1;
+}
+
+input:disabled,
+select:disabled {
+    background-color: var(--muted);
+    color: color-mix(in oklab, var(--input-text) 70%, grey);
+    font-style: italic;
+    opacity: 1;
+}
+
+.submit-btn {
+    padding: 0.25rem;
+    outline: var(--ring);
+    background: var(--accent);
+}
+
+h2 {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: auto;
+    transform: translateY(-5rem);
+}
+
+.calories {
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: auto;
+    transform: translateY(3rem);
+}
+
+.landing-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.app-shell {
+    width: 100%;
+    max-width: var(--content-max-width);
+    height: 100%;
+    display: grid;
+    grid-template-rows: var(--header-height) 1fr var(--footer-height);
+    background: var(--surface);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.top,
+.bottom {
+    display: flex;
+    align-items: center;
+    background: var(--muted);
+    border: 0;
+    width: 100%;
+}
+
+.top {
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+}
+
+.bottom {
+    justify-content: space-evenly;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.content-view {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 1rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.row>[data-field="label"] {
+    opacity: 0.9;
+}
+
+.row>[data-field="control"] {
+    width: 100%;
+    min-height: 2.25rem;
+    padding: 0.5rem 0.75rem;
+    color: inherit;
+    background: transparent;
+    border: 1px solid color-mix(in oklab, var(--text) 22%, transparent);
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.row>[data-field="control"]:focus-visible {
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 35%, transparent);
+}
+
+.btn {
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 3rem;
+    margin: 0.25rem;
+    font: inherit;
+    color: var(--btn-fg);
+    border-radius: 0.5rem;
+    transition: background-color var(--ease-fast), transform var(--ease-press);
+}
+
+.btn:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.btn .btn__label {
+    font-size: 0.825rem;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.dashboard.landing {
+    grid-template-rows: 1fr;
+    height: 150px;
+}
+
+.dashboard .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#btn-go-signup>.btn__icon {
+    transform: translateX(3px);
+}
+
+.btn.xs .btn__icon.xs {
+    inline-size: var(--icon-size);
+    block-size: var(--icon-size);
+}
+
+.btn .btn__icon {
+    inline-size: calc(var(--icon-size)*1.5);
+    block-size: calc(var(--icon-size)*1.5);
+    display: inline-block;
+    color: currentColor;
+}
+
+.btn .btn__icon>svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+.btn .btn__icon.mask {
+    background-color: currentColor;
+    mask-image: var(--icon-src);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100% 100%;
+    -webkit-mask-image: var(--icon-src);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 100% 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+footer.bottom[aria-hidden="true"] {
+    min-height: var(--footer-height);
+}
+
+footer.bottom[aria-hidden="true"] .btn {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+#btn-theme {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .dashboard .btn {
+        flex: 1 1 auto;
+        padding: 1rem;
+    }
+}

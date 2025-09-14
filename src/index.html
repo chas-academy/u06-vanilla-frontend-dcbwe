@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>u06</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div class="app-shell" aria-label="app">
+
+        <header class="top" role="toolbar" aria-label="app controls">
+
+            <button class="btn xs" id="btn-back" type="button" aria-label="back" hidden>
+                <span class="btn__icon xs" aria-hidden="true">
+                    <!-- svg return -->
+                </span>
+            </button>
+
+            <button class="btn xs" id="btn-theme" type="button" aria-pressed="false">
+                <span class="btn__icon xs" aria-hidden="true">
+                    <!-- svg moon/sun -->
+                </span>
+            </button>
+
+        </header>
+
+        <main class="content" data-slot="content">
+            <!-- content -->
+        </main>
+
+        <footer class="bottom" role="toolbar" aria-label="context actions">
+
+            <button class="btn xs" id="btn-one" type="button" hidden>
+                <span class="btn__icon" aria-hidden="true">
+                    <!-- svg home/save-->
+                </span>
+                <span class="btn__label">
+                    <!-- text -->
+                </span>
+            </button>
+
+            <button class="btn xs" id="btn-two" type="button" hidden>
+                <span class="btn__icon" aria-hidden="true">
+                    <!-- svg edit/cancel-->
+                </span>
+                <span class="btn__label">
+                    <!-- text -->
+                </span>
+            </button>
+
+        </footer>
+
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
